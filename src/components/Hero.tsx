@@ -18,15 +18,19 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Discover the
+            Explore Jharkhand — 
             <span className="block bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-              Heart of Jharkhand
+              Nature, Culture & Tribes, Reimagined with AI
             </span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Experience pristine forests, rich tribal culture, and breathtaking landscapes. 
-            Connect with local communities and discover authentic eco-tourism adventures.
+          <p className="text-lg sm:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
+            Personalized itineraries • Local markets & homestays • Secure bookings • AR/VR previews — all in one app.
+          </p>
+
+          <p className="text-base sm:text-lg text-white/80 mb-8 max-w-4xl mx-auto leading-relaxed">
+            From misty waterfalls and dense forests to living tribal traditions, Jharkhand is India's most authentic nature + culture destination. 
+            Jharkhand Connects helps you discover, book and experience it safely — with AI planning, verified local guides, and a marketplace that empowers artisans.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -35,7 +39,7 @@ const Hero = () => {
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-nature px-8 py-4 text-lg"
             >
               <MapPin className="mr-2 h-5 w-5" />
-              Explore Destinations
+              Plan My Trip
             </Button>
             <Button 
               size="lg" 
@@ -43,7 +47,7 @@ const Hero = () => {
               className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg"
             >
               <Camera className="mr-2 h-5 w-5" />
-              Virtual Tour
+              Explore Marketplace
             </Button>
           </div>
           
