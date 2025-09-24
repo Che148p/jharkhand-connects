@@ -2,7 +2,7 @@
 header("Content-Type: application/json");
 
 // Load SOS data
-$dataFile = "sosData.json";
+$dataFile = "SOS.json";
 
 if (!file_exists($dataFile)) {
     echo json_encode([
