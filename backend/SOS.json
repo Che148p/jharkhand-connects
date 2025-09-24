@@ -1,40 +1,62 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const sosBtn = document.getElementById("sosBtn");
-    const cityInput = document.getElementById("cityInput");
-    const sosResult = document.getElementById("sosResult");
-
-    sosBtn.addEventListener("click", () => {
-        const city = cityInput.value.trim();
-
-        if (!city) {
-            sosResult.innerHTML = <span style="color:red;">Please enter a city/town in Jharkhand.</span>;
-            return;
-        }
-
-        fetch("Backend/sos.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ city })
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.status === "success") {
-                sosResult.innerHTML = `
-                    <h4>SOS Contacts for ${data.city}</h4>
-                    <ul>
-                        <li><strong>Police:</strong> ${data.contacts.police}</li>
-                        <li><strong>Police Control Room:</strong> ${data.contacts.policeControlRoom}</li>
-                        <li><strong>Hospital:</strong> ${data.contacts.hospital}</li>
-                        <li><strong>Anti-Naxal Soldiers:</strong> ${data.contacts.antiNaxal || "Not Available"}</li>
-                    </ul>
-                `;
-            } else {
-                sosResult.innerHTML = <span style="color:red;">${data.message}</span>;
-            }
-        })
-        .catch(err => {
-            console.error(err);
-            sosResult.innerHTML = <span style="color:red;">Error fetching SOS data.</span>;
-        });
-    });
-});
+{
+  "Ranchi": {
+    "police": "100",
+    "policeControlRoom": "0651-2311217",
+    "hospital": "9709016627 / 0651-2400000",
+    "antiNaxal": "7739692222"
+  },
+  "Dhanbad": {
+    "police": "100",
+    "policeControlRoom": "0326-2311217",
+    "hospital": "9234681512 / 7808368888",
+    "antiNaxal": "7896543210"
+  },
+  "Jamshedpur": {
+    "police": "100",
+    "policeControlRoom": "0657-2332138",
+    "hospital": "0657-2345678",
+    "antiNaxal": "7891234560"
+  },
+  "Bokaro": {
+    "police": "100",
+    "policeControlRoom": "06542-233111",
+    "hospital": "9431112233",
+    "antiNaxal": "7804567890"
+  },
+  "Hazaribagh": {
+    "police": "100",
+    "policeControlRoom": "06546-222333",
+    "hospital": "9432224455",
+    "antiNaxal": "7896541230"
+  },
+  "Giridih": {
+    "police": "100",
+    "policeControlRoom": "06532-221100",
+    "hospital": "9433335566",
+    "antiNaxal": "7801234567"
+  },
+  "Deoghar": {
+    "police": "100",
+    "policeControlRoom": "06432-224455",
+    "hospital": "9434446677",
+    "antiNaxal": "7893214560"
+  },
+  "Netarhat": {
+    "police": "100",
+    "policeControlRoom": "0651-2311217",
+    "hospital": "9709016627",
+    "antiNaxal": "7739692222"
+  },
+  "Rourkela": {
+    "police": "100",
+    "policeControlRoom": "0661-2501234",
+    "hospital": "9435557788",
+    "antiNaxal": "7809876543"
+  },
+  "Palamu": {
+    "police": "100",
+    "policeControlRoom": "06564-223344",
+    "hospital": "9436668899",
+    "antiNaxal": "7894561230"
+  }
+}
